@@ -1,5 +1,5 @@
-// services/pushService.js
 const webpush = require("web-push");
+const User = require("../models/userModel");
 
 webpush.setVapidDetails(
   "mailto:test@test.com",
@@ -8,14 +8,11 @@ webpush.setVapidDetails(
 );
 
 async function sendPush(notification) {
-  // mock subscription (replace with DB)
-  const subscription = {
-    endpoint: process.env.ENDPOINT,
-    keys: {
-      p256dh: process.env.P256DH,
-      auth: process.env.AUTH
-    }
-  };
+  const user = await User.findOne({ userId: notification.userId });
+
+  if (!user || !user.subscription) {
+    throw new Error("No subscription found");
+  }
 
   const payload = JSON.stringify({
     title: "Notification",
@@ -23,7 +20,7 @@ async function sendPush(notification) {
     timestamp: new Date()
   });
 
-  await webpush.sendNotification(subscription, payload);
+  await webpush.sendNotification(user.subscription, payload);
 }
 
 module.exports = { sendPush };

@@ -1,0 +1,45 @@
+/* Container */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f7fa;
+}
+
+/* Card */
+.card {
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Title */
+.title {
+  margin-bottom: 10px;
+}
+
+/* User text */
+.user {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Button */
+.button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button hover */
+.button:hover {
+  background-color: #45a049;
+}

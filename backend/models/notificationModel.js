@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const notificationSchema = new mongoose.Schema({
+const schema = new mongoose.Schema({
   userId: String,
   message: String,
   scheduleAt: Date,
@@ -8,4 +8,4 @@ const notificationSchema = new mongoose.Schema({
   retries: { type: Number, default: 0 }
 });
 
-module.exports = mongoose.model("Notification", notificationSchema);
+module.exports = mongoose.model("Notification", schema);
