@@ -14,7 +14,7 @@ Technologies Used
 Node.js with Express
 MongoDB for data storage
 Redis for rate limiting
-RabbitMQ for asynchronous message queue
+RabbitMQ for asynchronous message queue 
 Web Push for sending notifications
 React for frontend
 Server-Sent Events (SSE) for real-time updates
